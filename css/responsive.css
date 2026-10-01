@@ -1,0 +1,442 @@
+/* Sarab – responsive + consistency layer (loaded after style.css) */
+:root{--rad:14px;--shadow:0 2px 10px rgba(0,0,0,.07);--red:var(--primary,#e1251b);--org:#f5a623;--pad:14px}
+html{scroll-padding-top:70px;-webkit-text-size-adjust:100%}
+body{overflow-x:clip;font-size:15px;line-height:1.55}
+img{max-width:100%}
+.container{padding-left:var(--pad);padding-right:var(--pad)}
+section{padding:36px 0}
+.stitle{font-size:clamp(1.55rem,5.2vw,2.3rem);line-height:1.2}
+.slbl{font-size:1.2rem}.sdesc{font-size:.95rem}
+.sline{height:3px;margin:8px auto 10px}
+/* consistent card look */
+.mcard,.chcard,.blcard,.fcard,.tcard,.catcard,.cditem,.hbanner{border-radius:var(--rad)}
+.btn-red,.hb-btn,.nlbtn,.filtbtn{border-radius:99px}
+
+/* ---------- HERO (matches reference) ---------- */
+#hero.shero{min-height:0;display:block;padding:12px 0 6px;background:transparent}
+.hbanner{position:relative;display:grid;min-height:170px;overflow:hidden;color:#fff;background:#1c0503}
+.hslide{grid-area:1/1;display:flex;align-items:center;padding:18px 18px;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility .7s;
+ background:linear-gradient(90deg,#1c0503 0%,#1c0503 36%,rgba(28,5,3,.9) 50%,rgba(28,5,3,0) 80%),var(--bg) right center/auto 128% no-repeat,#1c0503}
+.hslide.on{opacity:1;visibility:visible}
+.hb-dots i{cursor:pointer;transition:width .3s,background .3s}
+.hb-txt{max-width:64%;position:relative;z-index:1}
+.hb-tag{display:inline-block;background:var(--org);color:#3b1700;font-size:.66rem;font-weight:600;padding:4px 10px;border-radius:6px;letter-spacing:.02em}
+.shero h1{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;line-height:1.18;margin:9px 0 5px;color:#fff}
+.shero h1 em{font-style:normal;color:var(--org)}
+.hb-txt p{font-size:.86rem;opacity:.92;margin:0 0 12px}
+.hb-btn{display:inline-block;background:var(--red);color:#fff;font-weight:500;font-size:.88rem;padding:9px 20px;text-decoration:none}
+.hb-btn i{font-size:.72rem;margin-left:4px}
+.hb-dots{position:absolute;right:26%;bottom:10px;display:flex;gap:5px;z-index:2}
+.hb-dots i{width:6px;height:6px;border-radius:9px;background:rgba(255,255,255,.55)}.hb-dots i.on{width:18px;background:var(--red)}
+.feats{display:flex;overflow-x:auto;padding:14px 0 2px;scrollbar-width:none}
+.feats::-webkit-scrollbar,.cats::-webkit-scrollbar,#menu .text-center.mb-4::-webkit-scrollbar{display:none}
+.feats>div{flex:1 0 auto;display:flex;align-items:center;gap:8px;padding:0 12px;border-left:1px solid #eadfd8}
+.feats>div:first-child{border:0;padding-left:2px}
+.feats i{font-size:1.45rem;color:var(--red)}
+.feats p{margin:0}.feats b{display:block;font-size:.8rem;font-weight:600;line-height:1.2;white-space:nowrap}
+.feats small{font-size:.68rem;color:#8a8a8a;white-space:nowrap}
+
+/* ---------- FOOD SHOWCASE ---------- */
+#category{padding-top:24px}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-bottom:12px}
+.shead .stitle{margin:0;text-align:left}.shead .slbl{margin:0}
+.smore{color:var(--red);font-weight:600;font-size:.88rem;white-space:nowrap;text-decoration:none;padding-bottom:4px}
+.cats{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:4px}
+#category .catcard{flex:0 0 78px;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;text-align:center;scroll-snap-align:start;cursor:pointer}
+#category .catimg{width:100%!important;height:auto!important;aspect-ratio:1/.95;object-fit:cover;border-radius:12px;box-shadow:var(--shadow);margin:0 0 6px!important}
+#category .catnm{font-size:.8rem;font-weight:500;color:#222;margin:0}
+#category .catcard.active .catnm{color:var(--red);font-weight:600}
+#category .catcard.active .catimg{outline:2px solid var(--red)}
+
+/* ---------- MENU: chips + scrollable rows ---------- */
+#menu .text-center.mb-4{display:flex;gap:8px;overflow-x:auto;white-space:nowrap;text-align:left!important;margin:0 calc(var(--pad)*-1) 12px!important;padding:2px var(--pad)}
+#menu .filtbtn{flex:none;margin:0!important;padding:7px 18px!important;font-size:.88rem!important}
+#mgrid{display:grid;grid-template-columns:1fr;gap:10px;max-height:640px;overflow-y:auto;overscroll-behavior:contain;padding:2px 6px 6px 2px;scroll-snap-type:y proximity;scrollbar-width:thin;scrollbar-color:var(--red) #f1e8e3}
+#mgrid::-webkit-scrollbar{width:5px}#mgrid::-webkit-scrollbar-thumb{background:var(--red);border-radius:9px}
+#mgrid .mwrap{width:100%;max-width:none;padding:0;margin:0;scroll-snap-align:start}
+#mgrid .mwrap.gone{display:none}
+#mgrid .mcard{display:grid;grid-template-columns:104px 1fr auto;gap:12px;align-items:center;padding:8px;background:#fff;box-shadow:var(--shadow);transform:none!important;height:auto}
+#mgrid .mimg{position:relative;width:104px;height:78px!important;border-radius:10px;overflow:hidden}
+#mgrid .mimg img{width:100%;height:100%!important;object-fit:cover;transform:none!important}
+#mgrid .mbdg{position:absolute;top:5px;left:5px;font-size:.62rem;font-weight:600;color:#fff;padding:2px 7px;border-radius:5px;background:#1f7a4d}
+#mgrid .mbdg.best{background:var(--red)}
+#mgrid .mtit{font-size:.98rem;font-weight:600;line-height:1.28;color:#1d1d1f;margin:0}
+#mgrid .mstars{font-size:.8rem;color:#777;margin:1px 0 2px}#mgrid .mstars i{color:var(--org)}
+#mgrid .mdesc{font-size:.8rem;line-height:1.4;color:#777;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+#mgrid .mbody{padding:0;min-width:0}
+#mgrid .mbuy{align-self:stretch;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;padding:2px 2px 0}
+#mgrid .mprice{font-size:1.02rem;font-weight:600;color:var(--red);line-height:1.1;text-align:right}
+#mgrid .mprice small{display:block;font-size:.72rem;font-weight:400;color:#aaa;text-decoration:line-through}
+#mgrid .madd{position:static;width:34px;height:34px;border-radius:50%;border:0;background:var(--red);color:#fff;font-size:.8rem;box-shadow:0 4px 10px rgba(225,37,27,.35)}
+
+/* ---------- CHEFS: 2 x 2 in every view ---------- */
+#chefs .row{--bs-gutter-x:12px;--bs-gutter-y:12px;max-width:920px;margin-left:auto;margin-right:auto}
+#chefs .row>[class*=col]{flex:0 0 50%;max-width:50%;width:50%}
+#chefs .chcard{overflow:hidden;height:100%;box-shadow:var(--shadow)}
+#chefs .chimg{height:auto!important;aspect-ratio:1/1.05}
+#chefs .chimg img{width:100%;height:100%;object-fit:cover;object-position:top}
+#chefs .chbody{padding:12px 10px!important;text-align:center}
+#chefs .chnm{font-size:1rem;font-weight:700}#chefs .chrole{font-size:.85rem}#chefs .chexp{font-size:.8rem}
+
+/* ---------- BLOG carousel ---------- */
+.blogSwiper{padding:2px 2px 38px}
+.blogSwiper .swiper-slide{height:auto}
+.blcard{height:100%;overflow:hidden;box-shadow:var(--shadow);background:#fff}
+.blimg{height:170px!important}.blimg img{width:100%;height:100%;object-fit:cover}
+.blbody{padding:16px!important}
+.bltag{font-size:.78rem}.bltit{font-size:1.02rem;line-height:1.35}.blmeta{font-size:.8rem}.blmore{font-size:.88rem}
+.blog-pg .swiper-pagination-bullet-active{background:var(--red)}
+
+/* ---------- other sections: tidy sizes ---------- */
+.amain img{width:100%;height:auto;max-height:340px;object-fit:cover}
+.fcard,.tcard{box-shadow:var(--shadow)}
+.form-control,.form-select,input,select,textarea{font-size:.95rem}
+#btt{display:none!important}
+
+/* ---------- MOBILE (< 992px: bottom nav) ---------- */
+@media(max-width:991px){
+ #topbar{display:none}
+ #nav{padding:7px 0!important}
+ #nav .bico{width:38px;height:38px;font-size:1rem}.bname{font-size:1.4rem}.bsub{font-size:.52rem;letter-spacing:.2em}
+ .asm,.hs,.hbgtxt{display:none!important}
+}
+
+
+/* small phones */
+@media(max-width:380px){
+ .shero h1{font-size:1.3rem}.hb-txt{max-width:68%}
+ #mgrid .mcard{grid-template-columns:88px 1fr auto;gap:10px}#mgrid .mimg{width:88px;height:70px!important}
+ #mgrid .mtit{font-size:.92rem}
+}
+/* tablet */
+@media(min-width:600px){
+ :root{--pad:24px}
+ section{padding:52px 0}
+ .hbanner{min-height:250px}.hslide{padding:30px 40px}.hb-tag{font-size:.8rem;padding:5px 14px}
+ .shero h1{font-size:2.4rem;margin:14px 0 8px}.hb-txt p{font-size:1.05rem;margin-bottom:18px}.hb-btn{font-size:1rem;padding:12px 28px}
+ .hb-txt{max-width:56%}.hb-dots{bottom:16px}.hb-dots i{width:8px;height:8px}.hb-dots i.on{width:24px}
+ .feats{padding-top:20px}.feats>div{justify-content:center;padding:0 22px}.feats i{font-size:1.9rem}.feats b{font-size:.98rem}.feats small{font-size:.82rem}
+ .cats{gap:16px}#category .catcard{flex:1 0 100px}#category .catnm{font-size:.95rem}
+ #menu .filtbtn{font-size:.95rem!important;padding:8px 22px!important}
+ #mgrid{grid-template-columns:1fr 1fr;gap:14px;max-height:680px}
+ #mgrid .mcard{grid-template-columns:112px 1fr auto}#mgrid .mimg{width:112px;height:88px!important}
+ #mgrid .mtit{font-size:1.02rem}#mgrid .mdesc{font-size:.84rem}#mgrid .mprice{font-size:1.08rem}
+ #chefs .row{--bs-gutter-x:20px;--bs-gutter-y:20px}#chefs .chnm{font-size:1.15rem}
+ .blimg{height:190px!important}.bltit{font-size:1.08rem}
+}
+/* desktop */
+@media(min-width:992px){
+ :root{--pad:24px}
+ section{padding:72px 0}
+ #hero.shero{padding-top:18px}
+ .hbanner{min-height:380px}.hslide{padding:50px 70px}.shero h1{font-size:3.4rem}.hb-txt p{font-size:1.2rem}.hb-txt{max-width:50%}
+ .feats{justify-content:space-between}
+ #category .catcard{flex:1 0 0}
+ #mgrid{grid-template-columns:repeat(3,1fr);gap:16px;max-height:700px}
+ #mgrid .mcard{grid-template-columns:120px 1fr auto}#mgrid .mimg{width:120px;height:96px!important}
+ #chefs .row{max-width:860px}
+}
+
+body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+.bnav{position:fixed;left:0;right:0;bottom:0;z-index:1040;display:flex;justify-content:space-around;background:#fff;border-top:1px solid #eee;padding:7px 0 calc(7px + env(safe-area-inset-bottom));font:500 .72rem Poppins,sans-serif}
+.bnav a{display:flex;flex-direction:column;align-items:center;gap:2px;color:#222;text-decoration:none;min-width:60px}
+.bnav a.on{color:var(--red);font-weight:600}.bnav i{font-size:1.3rem}.bnav span{position:relative}
+.bnav b{position:absolute;top:-6px;right:-11px;background:var(--red);color:#fff;font:600 .6rem/16px Poppins;min-width:16px;text-align:center;border-radius:9px}
+@media(min-width:992px){body{padding-bottom:100px}.bnav{left:50%;right:auto;transform:translateX(-50%);width:min(560px,calc(100% - 32px));bottom:14px;border-radius:18px;border:1px solid #eee;box-shadow:0 8px 30px rgba(0,0,0,.16);font-size:.8rem}}
+/* fixes */
+.fcard:not(.fc1):not(.fc2):not(.fc3){position:relative;display:block}
+html,body{overflow-x:hidden;max-width:100%}
+section,footer{overflow-x:clip}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* =====================================================================
+   UI OPTIMIZATION LAYER
+   Same sections, same components, same colours/fonts — only sizing,
+   spacing, proportions and responsive behaviour are tuned here.
+   Mobile first  →  ≥576 small tablet  →  ≥768 tablet  →  ≥992 desktop
+   ===================================================================== */
+
+/* ---------- 1. Global rhythm (mobile) ---------- */
+section{padding:40px 0}
+section .text-center.mb-5{margin-bottom:22px!important}
+section .text-center.mt-5{margin-top:22px!important}
+.slbl{font-size:1.1rem;margin-bottom:2px}
+.stitle{font-size:clamp(1.45rem,6vw,2.4rem);margin-bottom:8px}
+.sline{width:48px;margin:6px auto 10px}
+.sline.lft{margin-left:0}
+.sdesc{font-size:.88rem;line-height:1.65}
+.btn-red{padding:11px 24px;font-size:.88rem;gap:8px;box-shadow:0 6px 16px rgba(232,40,26,.28)}
+.btn-red:hover{transform:translateY(-2px)}
+img{height:auto}
+
+/* ---------- 2. Navbar (mobile collapse panel) ---------- */
+@media(max-width:991px){
+ #nav .navbar-collapse{border-top:1px solid #f0e6e0;margin-top:8px;padding:6px 0 12px}
+ #nav .navbar-nav .nav-link{padding:10px 4px!important;font-size:.92rem}
+ #nav .navbar-nav .nav-link::after{display:none}
+ #nav .navbar-nav .nav-link.active{color:var(--primary)!important}
+ #nav .navbar-collapse>.d-flex{justify-content:space-between;padding-top:8px;border-top:1px solid #f4ece7}
+ #nav .nav-cta{margin:0;padding:9px 18px!important}
+ #nav .navbar-toggler{padding:6px 8px;box-shadow:none!important}
+}
+
+/* ---------- 3. Hero feature strip: fit 4 items on a phone, no clipping ---------- */
+.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;overflow:visible;padding:12px 0 0}
+.feats>div{flex-direction:column;text-align:center;gap:4px;padding:0 4px;min-width:0}
+.feats>div:first-child{padding-left:4px}
+.feats i{font-size:1.25rem}
+.feats b{font-size:.72rem;white-space:normal}
+.feats small{font-size:.62rem;white-space:normal;display:block;line-height:1.25}
+
+/* ---------- 4. Food showcase categories ---------- */
+#category{padding:22px 0 26px}
+.shead .slbl{font-size:1rem}
+#category .catcard{flex:0 0 76px}
+
+/* ---------- 5. About ---------- */
+#about .row,#special .row{--bs-gutter-x:24px}
+#about .row{--bs-gutter-y:24px}
+#about .amain img{height:auto;max-height:none;aspect-ratio:16/10}
+#about .aexp{top:12px;left:12px;padding:10px 14px;border-radius:12px}
+#about .aexp .anum{font-size:1.6rem}
+#about .aexp small{font-size:.62rem;line-height:1.2;display:block}
+#about .sdesc{margin-bottom:16px!important}
+#about .mb-4{margin-bottom:18px!important}
+.fti{gap:12px;margin-bottom:14px}
+.ftico{width:40px;height:40px;font-size:1rem;border-radius:10px}
+.fti h6{font-size:.88rem}
+.fti p{font-size:.78rem;line-height:1.5}
+
+/* ---------- 6. Menu: list flows with the page (no nested scroll box) ---------- */
+#mgrid{max-height:none;overflow:visible;padding:0;scroll-snap-type:none}
+#mgrid .mcard{border:1px solid #f1e8e3}
+#mgrid .mbdg{font-size:.58rem;padding:2px 6px}
+
+/* ---------- 7. Special offer ---------- */
+#special .row{--bs-gutter-y:28px}
+.sptag{font-size:.66rem;letter-spacing:1.4px;padding:4px 12px;margin-bottom:10px}
+.sptitle{font-size:clamp(1.75rem,7.2vw,3.2rem);line-height:1.12}
+.spdesc{font-size:.86rem;line-height:1.65;margin:12px 0}
+.cdwrap{gap:8px;margin:16px 0 20px}
+.cditem{min-width:62px;padding:9px 10px;border-radius:10px}
+.cdnum{font-size:1.5rem}
+.cdlbl{font-size:.58rem}
+.spimgw{max-width:380px;margin:0 auto}
+.spimgw img{display:block;max-width:100%;aspect-ratio:6/5;object-fit:cover;border-radius:16px;animation:none}
+.spglow{width:70%;height:70%}
+.sppbdg{width:68px;height:68px;top:-12px;left:-6px}
+.sppbdg .np{font-size:1rem}.sppbdg .old{font-size:.6rem}
+
+/* ---------- 8. Gallery: uniform tiles, correct ratios ---------- */
+.ggrid{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:auto;gap:10px}
+.gitem{border-radius:12px;aspect-ratio:1/1}
+.gitem:first-child{grid-column:1/-1;grid-row:auto;aspect-ratio:16/9}
+.gitem img{display:block}
+@media(hover:none){.gover{opacity:1;padding:10px 12px}.gover span{font-size:.76rem}}
+
+/* ---------- 9. History timeline ---------- */
+.timeline{padding:4px 0}
+.tli{margin-bottom:22px}
+.tli:last-child{margin-bottom:0}
+.tlyear{font-size:1.05rem}
+.tl-left h5,.tl-right h5{font-size:.98rem;margin-bottom:4px}
+.tl-left p,.tl-right p{font-size:.8rem;line-height:1.6}
+@media(max-width:991px){.tl-right{padding-left:12px!important}}
+
+/* ---------- 10. Chefs ---------- */
+#chefs .chimg{aspect-ratio:1/1}
+#chefs .chbody{padding:10px 8px 12px!important}
+#chefs .chnm{font-size:.92rem}
+#chefs .chrole{font-size:.68rem;letter-spacing:.5px}
+#chefs .chexp{font-size:.7rem;margin-top:2px}
+@media(hover:none){.chsoc{bottom:0;padding:8px 0}.chsoc a{width:28px;height:28px;font-size:.7rem}}
+
+/* ---------- 11. Opening hours ---------- */
+.hrscard{padding:16px 18px;border-radius:16px;height:100%}
+.hrsrow{padding:10px 0;gap:10px}
+.hrsday{font-size:.8rem}
+.hrstime{font-size:.8rem;white-space:nowrap}
+.hrscta{padding:22px 18px;border-radius:16px;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(232,40,26,.3)}
+.hrscta .fa-2x{font-size:1.6em;margin-bottom:8px!important}
+.hrscta h4{font-size:1.2rem;margin:0}
+.hrscta p{font-size:.8rem;margin:6px 0 14px}
+.btnw{padding:9px 22px;font-size:.84rem}
+#hours h5{margin-bottom:8px!important}
+
+/* ---------- 12. Testimonials ---------- */
+.tescard{padding:20px;border-radius:16px;height:100%}
+.tesSwiper .swiper-slide{height:auto}
+.tesq{font-size:3.4rem;top:10px;right:16px}
+.tess{font-size:.76rem;margin-bottom:8px}
+.testxt{font-size:.84rem;line-height:1.65;margin-bottom:14px}
+.tesauth img{width:40px;height:40px;border-width:2px}
+.tesSwiper .swiper-pagination{margin-top:14px!important}
+.swiper-pagination-bullet-active{background:var(--primary)}
+
+/* ---------- 13. Forms (reservation + contact) ---------- */
+.fcard{padding:18px 16px;border-radius:16px}
+.fcard .row{--bs-gutter-y:12px;--bs-gutter-x:12px}
+.flbl{font-size:.78rem;margin-bottom:4px}
+.fctrl{padding:10px 13px;border-width:1.5px;border-radius:10px;font-size:16px;min-height:44px}   /* 16px stops iOS zoom-on-focus */
+textarea.fctrl{min-height:0}
+.fcard .btn-red{width:100%;justify-content:center;padding:12px 24px}
+.rescard{padding:20px 18px!important;border-radius:16px!important}
+.rescard h4{font-size:1.1rem!important;margin-bottom:4px!important}
+.rescard>p{margin-bottom:16px!important;font-size:.8rem!important}
+.rescard .d-flex.flex-column{gap:12px!important}
+.rescard .d-flex.align-items-center>div:first-child{width:38px!important;height:38px!important;border-radius:10px!important;font-size:.9rem!important}
+.ctdark{padding:20px 18px;border-radius:16px}
+.ctdark h4{font-size:1.1rem}
+.ctdark .ctsub{font-size:.8rem;margin-bottom:16px}
+.ctitem{margin-bottom:12px;gap:12px}
+.cticon{width:38px;height:38px}
+.ctinfo strong{font-size:.68rem}.ctinfo span{font-size:.84rem}
+
+/* ---------- 14. Blog ---------- */
+.blimg{height:auto!important;aspect-ratio:16/9}
+.blbody{padding:14px!important}
+.bltit{font-size:.96rem}
+.blogSwiper{padding-bottom:32px}
+
+/* ---------- 15. Newsletter ---------- */
+#newsletter{padding:40px 0}
+.nlw h2{font-size:clamp(1.4rem,5.6vw,2.1rem);line-height:1.25}
+.nlw p.mb-4{font-size:.85rem;margin-bottom:16px!important}
+.nl-form-wrap{gap:8px}
+.nlinput,.nlbtn{padding:12px 18px;font-size:16px}
+.nlbtn{font-size:.9rem}
+
+/* ---------- 16. Footer ---------- */
+footer{padding:36px 0 0}
+.fnm{font-size:1.6rem}
+.fdesc{font-size:.82rem;line-height:1.65}
+.fsoc{margin-top:12px}
+.ftit{margin-bottom:12px;padding-bottom:6px;font-size:.9rem}
+.flinks{margin-bottom:0}
+.flinks li{margin-bottom:6px}
+.flinks a,.fciinfo{font-size:.8rem}
+.fci{margin-bottom:10px}
+.fbot{margin-top:26px;padding:14px 0}
+.fbot p{font-size:.74rem;line-height:1.6}
+.fbot .d-flex>div a:first-child{margin-left:0}
+.fbot a{margin-left:14px;font-size:.74rem}
+
+/* ---------- 17. Menu detail popup → bottom sheet on phones ---------- */
+@media(max-width:767px){
+ #menuPop{padding:0;align-items:flex-end}
+ .mpbox{border-radius:20px 20px 0 0;max-height:90vh}
+ .mpbox .mpimg{min-height:0!important;aspect-ratio:16/10;border-radius:20px 20px 0 0!important}
+ .mpbox .mpbody{padding:16px 16px calc(18px + env(safe-area-inset-bottom))!important}
+}
+
+/* ---------- 18. Bottom nav: compact on phones, hidden on desktop ---------- */
+body{padding-bottom:calc(62px + env(safe-area-inset-bottom))}
+.bnav{padding:6px 0 calc(6px + env(safe-area-inset-bottom));font-size:.66rem;box-shadow:0 -2px 12px rgba(0,0,0,.05)}
+.bnav i{font-size:1.15rem}
+.bnav a{min-width:56px}
+
+/* small phones (≤360) */
+@media(max-width:360px){
+ :root{--pad:12px}
+ .feats b{font-size:.66rem}.feats small{display:none}
+ .cditem{min-width:56px}
+ .hrsday,.hrstime{font-size:.74rem}
+}
+
+/* ≥576 : large phones / small tablets */
+@media(min-width:576px){
+ .fcard{padding:24px}
+ .rescard .d-flex.flex-column{display:grid!important;grid-template-columns:1fr 1fr}
+}
+
+/* ≥768 : tablets */
+@media(min-width:768px){
+ section{padding:56px 0}
+ section .text-center.mb-5{margin-bottom:32px!important}
+ section .text-center.mt-5{margin-top:30px!important}
+ .slbl{font-size:1.25rem}
+ .sdesc{font-size:.92rem}
+ .btn-red{padding:12px 28px;font-size:.92rem}
+ .feats{padding-top:18px}
+ .feats>div{flex-direction:row;text-align:left;justify-content:center;gap:10px}
+ .feats i{font-size:1.6rem}.feats b{font-size:.88rem;white-space:nowrap}.feats small{font-size:.74rem;white-space:nowrap}
+ #category{padding:32px 0 40px}
+ #category .catcard{flex:1 0 96px}
+ #about .amain img{aspect-ratio:16/9}
+ #about .aexp{padding:14px 18px}#about .aexp .anum{font-size:2rem}
+ #special .spimgw{max-width:420px}
+ .ggrid{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,190px);gap:12px}
+ .gitem,.gitem:first-child{aspect-ratio:auto}
+ .gitem:first-child{grid-column:auto;grid-row:span 2}
+ .tli{margin-bottom:28px}
+ #chefs .row{max-width:none;--bs-gutter-x:14px}
+ #chefs .row>[class*=col]{flex:0 0 25%;max-width:25%;width:25%}
+ #chefs .chnm{font-size:.95rem}
+ .hrscard{padding:20px 22px}
+ .hrsday,.hrstime{font-size:.86rem}
+ .tescard{padding:24px}
+ .rescard,.ctdark{padding:26px!important}
+ #newsletter{padding:52px 0}
+ footer{padding:48px 0 0}
+ .fbot{margin-top:34px}
+}
+
+/* ≥992 : desktop */
+@media(min-width:992px){
+ section{padding:72px 0}
+ section .text-center.mb-5{margin-bottom:40px!important}
+ .btn-red{padding:13px 30px}
+ #category{padding:36px 0 56px}
+ #category .catcard{flex:1 0 0}
+ #about .row{--bs-gutter-x:56px}
+ #about .amain img{aspect-ratio:auto;height:420px}
+ #about .aexp{top:28px;left:-16px;padding:18px 22px}
+ #about .aexp .anum{font-size:2.3rem}#about .aexp small{font-size:.7rem}
+ .fti p{font-size:.82rem}
+ #menu .text-center.mb-4{justify-content:center;margin:0 0 20px!important;padding:2px 0}
+ #mgrid .mcard{padding:10px}
+ #special .row{--bs-gutter-x:48px}
+ .sptitle{font-size:clamp(2.6rem,4vw,3.4rem)}
+ .spdesc{font-size:.92rem;max-width:480px}
+ .cdwrap{gap:12px;margin:22px 0 26px}
+ .cditem{min-width:76px;padding:12px 16px}.cdnum{font-size:2rem}.cdlbl{font-size:.62rem}
+ .spimgw{max-width:460px}
+ .sppbdg{width:86px;height:86px;top:-16px;left:-16px}.sppbdg .np{font-size:1.25rem}.sppbdg .old{font-size:.68rem}
+ .ggrid{grid-template-rows:repeat(2,230px);gap:14px}
+ .tli{margin-bottom:34px}
+ .tl-left h5,.tl-right h5{font-size:1.05rem}.tl-left p,.tl-right p{font-size:.84rem}
+ /* chefs: classic 4-up row on desktop */
+ #chefs .row{max-width:none;--bs-gutter-x:22px}
+ #chefs .row>[class*=col]{flex:0 0 25%;max-width:25%;width:25%}
+ #chefs .chimg{aspect-ratio:4/4.4}
+ #chefs .chbody{padding:16px 12px!important}
+ #chefs .chnm{font-size:1.05rem}#chefs .chrole{font-size:.76rem}#chefs .chexp{font-size:.76rem;margin-top:4px}
+ .hrscard{padding:24px 26px}
+ .hrscta{padding:26px 20px}
+ .hrscta h4{font-size:1.35rem}
+ .testxt{font-size:.88rem}
+ .fcard{padding:28px 30px}
+ .fcard .row{--bs-gutter-x:16px;--bs-gutter-y:14px}
+ .fctrl{font-size:.9rem;min-height:46px}
+ .fcard #ctcBtn{width:auto}
+ .rescard,.ctdark{padding:30px!important}
+ .ctdark{height:100%}
+ .rescard .d-flex.flex-column{display:flex!important}
+ #contact-section .row{align-items:stretch!important}
+ .blimg{aspect-ratio:16/9}
+ .bltit{font-size:1.02rem}
+ #newsletter{padding:60px 0}
+ .nlinput,.nlbtn{font-size:.9rem;padding:14px 22px}
+ footer{padding:60px 0 0}
+ .fdesc,.flinks a,.fciinfo{font-size:.84rem}
+ .flinks li{margin-bottom:9px}
+ .fbot{margin-top:44px;padding:18px 0}
+ .fbot p,.fbot a{font-size:.8rem}
+ /* desktop already has the full navbar → no floating app bar */
+ .bnav{display:none!important}
+ body{padding-bottom:0}
+ #btt{display:flex!important;align-items:center;justify-content:center;bottom:24px;right:24px;width:42px;height:42px}
+}
+@media(min-width:1400px){
+ .ggrid{grid-template-rows:repeat(2,250px)}
+}

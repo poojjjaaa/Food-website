@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+      <meta name="author" content="Sarab">
+      <meta name="description" content="Sarab - Fast Food & Restaurant HTML Template">
+      <title>Sarab - Fast Food & Restaurant HTML Template</title>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet"/>
+      <!-- Bootstrap 5.3 -->
+      <link href="css/bootstrap.min.css" rel="stylesheet"/>
+      <!-- AOS Animate on Scroll -->
+      <link href="css/aos.css" rel="stylesheet"/>
+      <!-- Swiper -->
+      <link href="css/swiper-bundle.min.css" rel="stylesheet"/>
+      <!-- all min css -->
+      <link rel="stylesheet" href="css/all.min.css"/>
+      <!-- magnific CSS -->
+      <link rel="stylesheet" href="css/magnific-popup.css"/>
+      <!-- Style CSS -->
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/responsive.css" />
+      <link rel="stylesheet" href="css/cart.css" />
+   </head>
+   <body>
+      <!-- ============================================================
+         TOP BAR
+         ============================================================ -->
+      <div id="topbar">
+         <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+               <div class="top-contact d-flex flex-wrap">
+                  <span><i class="fas fa-phone-alt"></i>+1 (800) 123-4567</span>
+                  <span><i class="fas fa-envelope"></i>hello@sarabfood.com</span>
+                  <span><i class="fas fa-map-marker-alt"></i>42 Flavor Street, NY</span>
+               </div>
+               <div class="d-flex align-items-center gap-3">
+                  <span class="ttag"><i class="fas fa-fire me-1"></i>Free Delivery Today!</span>
+                  <div class="tsoc">
+                     <a href="#"><i class="fab fa-facebook-f"></i></a>
+                     <a href="#"><i class="fab fa-instagram"></i></a>
+                     <a href="#"><i class="fab fa-tiktok"></i></a>
+                     <a href="#"><i class="fab fa-youtube"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- ============================================================
+         NAVBAR
+         ============================================================ -->
+      <nav class="navbar navbar-expand-lg" id="nav">
+         <div class="container">
+            <a class="navbar-brand" href="#">
+               <div class="blogo">
+                  <div class="bico"><i class="fas fa-utensils"></i></div>
+                  <div>
+                     <div class="bname">Sar<span>ab</span></div>
+                     <div class="bsub">Fast Food & Restaurant</div>
+                  </div>
+               </div>
+            </a>
+            <button class="navcart" id="navCartBtn" type="button" aria-label="Open cart" data-open-cart>
+               <i class="fas fa-shopping-bag"></i><b class="cbadge" data-cart-count hidden>0</b>
+            </button>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars" style="color:var(--primary);font-size:1.35rem;"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+               <ul class="navbar-nav mx-auto">
+                  <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#chefs">Chefs</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#reservation">Reservation</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#contact-section">Contact</a></li>
+               </ul>
+               <div class="d-flex align-items-center gap-1">
+                  <!-- FIX 1: Search button -->
+                  <button id="navSearchBtn" type="button" title="Search" aria-label="Search menu"><i class="fas fa-search"></i></button>
+                  <a href="#menu" class="nav-link nav-cta"><i class="fas fa-shopping-bag me-1"></i>Order Now</a>
+               </div>
+            </div>
+         </div>
+      </nav>
+      <!-- ============================================================
+         FIX 1 � SEARCH OVERLAY POPUP
+         ============================================================ -->
+      <div id="searchOv">
+         <button class="sovclose" id="searchClose"><i class="fas fa-times"></i></button>
+         <div class="sovbox">
+            <h4>What are you craving today?</h4>
+            <div class="sovinput">
+               <input type="text" id="searchInput" placeholder="Search burgers, pizza, chicken..." autocomplete="off"/>
+               <button type="button" id="searchGo" aria-label="Search"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="sovres" id="sovRes" aria-live="polite"></div>
+            <!-- Categories inside search box -->
+            <div class="sovcats">
+               <div class="sovcat active" data-cat="all">
+                  <img src="img/menu/1.jpg" alt=""/>All Items
+               </div>
+               <div class="sovcat" data-cat="burgers">
+                  <img src="img/menu/1.jpg" alt=""/>Burgers
+               </div>
+               <div class="sovcat" data-cat="pizza">
+                  <img src="img/menu/2.jpg" alt=""/>Pizza
+               </div>
+               <div class="sovcat" data-cat="chicken">
+                  <img src="img/menu/3.jpg" alt=""/>Chicken
+               </div>
+               <div class="sovcat" data-cat="wraps">
+                  <img src="img/menu/4.jpg" alt=""/>Wraps
+               </div>
+               <div class="sovcat" data-cat="pasta">
+                  <img src="img/menu/5.jpg" alt=""/>Pasta
+               </div>
+               <div class="sovcat" data-cat="desserts">
+                  <img src="img/menu/6.jpg" alt=""/>Desserts
+               </div>
+            </div>
+            <div class="sovtrend">
+               <p><i class="fas fa-fire me-1" style="color:var(--secondary);"></i>Trending Searches</p>
+               <span class="ttag">Smash Burger</span>
+               <span class="ttag">Nashville Chicken</span>
+               <span class="ttag">Truffle Pizza</span>
+               <span class="ttag">Lava Cake</span>
+               <span class="ttag">Loaded Fries</span>
+               <span class="ttag">Mango Shake</span>
+            </div>
+         </div>
+      </div>
+      <!-- ============================================================
+         HERO
+         ============================================================ -->
+      <section id="hero" class="shero"><div class="container">
+ <div class="hbanner" id="hbanner">
+ <div class="hslide on" style="background-image:url('img/off-img.jpg')"><div class="hb-txt"><span class="hb-tag"><i class="fas fa-bolt"></i> LIMITED TIME OFFER</span>
+ <h1>Get 30% Off Our Signature <em>Burger Meal</em></h1><p>Don't miss our weekend special.</p><a href="#menu" class="hb-btn">Grab the Deal <i class="fas fa-arrow-right"></i></a></div></div>
+ <div class="hslide" style="background-image:url('img/menu/2.jpg')"><div class="hb-txt"><span class="hb-tag"><i class="fas fa-pizza-slice"></i> WEEKEND SPECIAL</span>
+ <h1>Buy 1 Get 1 Free on <em>Artisan Pizzas</em></h1><p>Hot from the oven, every evening.</p><a href="#menu" class="hb-btn">Order Now <i class="fas fa-arrow-right"></i></a></div></div>
+ <div class="hslide" style="background-image:url('img/menu/5.jpg')"><div class="hb-txt"><span class="hb-tag"><i class="fas fa-ice-cream"></i> SWEET DEAL</span>
+ <h1>Free <em>Donuts</em> on Orders Over $25</h1><p>Treat yourself after the meal.</p><a href="#menu" class="hb-btn">Claim Offer <i class="fas fa-arrow-right"></i></a></div></div>
+ <div class="hb-dots"><i class="on" data-i="0"></i><i data-i="1"></i><i data-i="2"></i></div></div>
+ <div class="feats"><div><i class="fas fa-motorcycle"></i><p><b>Fast Delivery</b><small>On Time</small></p></div><div><i class="fas fa-concierge-bell"></i><p><b>Fresh Food</b><small>Best Quality</small></p></div><div><i class="fas fa-utensils"></i><p><b>200+ Dishes</b><small>Wide Range</small></p></div><div><i class="far fa-star"></i><p><b>4.8 Rating</b><small>Happy Customers</small></p></div></div>
+</div></section>
+<section id="category"><div class="container">
+ <div class="shead"><div><span class="slbl">Food Showcase</span><h2 class="stitle">Let's See Our <span>Fast Food</span></h2></div><a href="#menu" class="smore">View All <i class="fas fa-arrow-right"></i></a></div>
+ <div class="cats"><div class="catcard" data-filter="burgers"><img class="catimg" src="img/dish/cat-burgers.jpg" alt="Burgers"><div class="catnm">Burgers</div></div><div class="catcard" data-filter="pizza"><img class="catimg" src="img/dish/cat-pizza.jpg" alt="Pizza"><div class="catnm">Pizza</div></div><div class="catcard" data-filter="chicken"><img class="catimg" src="img/dish/cat-chicken.jpg" alt="Chicken"><div class="catnm">Chicken</div></div><div class="catcard" data-filter="wraps"><img class="catimg" src="img/dish/cat-wraps.jpg" alt="Wraps"><div class="catnm">Wraps</div></div><div class="catcard" data-filter="pasta"><img class="catimg" src="img/dish/cat-pasta.jpg" alt="Pasta"><div class="catnm">Pasta</div></div><div class="catcard" data-filter="desserts"><img class="catimg" src="img/dish/cat-desserts.jpg" alt="Desserts"><div class="catnm">Desserts</div></div></div></div></section>
+      <!-- ABOUT -->
+      <section id="about">
+         <div class="container">
+            <div class="row align-items-center g-5">
+               <div class="col-lg-5" data-aos="fade-right">
+                  <div class="astack">
+                     <div class="aexp"><span class="anum">12+</span><small>Years of<br/>Excellence</small></div>
+                     <div class="amain"><img loading="lazy" decoding="async" src="img/about1.jpg" alt="Restaurant"/></div>
+                     <div class="asm"><img loading="lazy" decoding="async" src="img/about2.jpg" alt=""/></div>
+                  </div>
+               </div>
+               <div class="col-lg-7" data-aos="fade-left">
+                  <span class="slbl">Our Story</span>
+                  <h2 class="stitle text-start">We Invite You to Visit<br/>Our <span>Food Restaurant</span></h2>
+                  <div class="sline lft"></div>
+                  <p class="sdesc mb-4">Founded in 2012, Sarab began as a small corner joint with a big dream - to serve food that brings people together. Today we're proud to serve thousands of happy customers every week with the same passion that started it all.</p>
+                  <div class="mb-4">
+                     <div class="fti">
+                        <div class="ftico r"><i class="fas fa-leaf"></i></div>
+                        <div>
+                           <h6>100% Fresh Ingredients</h6>
+                           <p>We source locally and sustainably. Every ingredient is hand-picked daily for maximum freshness.</p>
+                        </div>
+                     </div>
+                     <div class="fti">
+                        <div class="ftico y"><i class="fas fa-award"></i></div>
+                        <div>
+                           <h6>Award-Winning Recipes</h6>
+                           <p>Our signature recipes have won national culinary awards 5 years in a row.</p>
+                        </div>
+                     </div>
+                     <div class="fti">
+                        <div class="ftico g"><i class="fas fa-shipping-fast"></i></div>
+                        <div>
+                           <h6>Lightning-Fast Delivery</h6>
+                           <p>Order online and get hot, fresh food at your door in under 25 minutes, guaranteed.</p>
+                        </div>
+                     </div>
+                  </div>
+                  <a href="#menu" class="btn-red"><i class="fas fa-book-open"></i>View Full Menu</a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- ============================================================
+         MENU � FIX 3 (filter works) + FIX 4 (plus opens popup)
+         ============================================================ -->
+      <section id="menu">
+         <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+               <span class="slbl">What's Cooking</span>
+               <h2 class="stitle">Our Delicious <span>Menu</span></h2>
+               <div class="sline"></div>
+            </div>
+            <!-- FIX 3 � filter buttons -->
+            <div class="text-center mb-4" data-aos="fade-up">
+               <button class="filtbtn active" data-f="all">All</button>
+               <button class="filtbtn" data-f="burgers">Burgers</button>
+               <button class="filtbtn" data-f="pizza">Pizza</button>
+               <button class="filtbtn" data-f="chicken">Chicken</button>
+               <button class="filtbtn" data-f="wraps">Wraps</button>
+               <button class="filtbtn" data-f="desserts">Desserts</button>
+               <button class="filtbtn" data-f="pasta">Pasta</button>
+            </div>
+            <div id="mgrid">
+<div class="mwrap" data-c="burgers"><div class="mcard" data-img="img/dish/smash-burger.jpg" data-title="Classic Smash Burger" data-cat="Burgers" data-price="$14.99" data-old="$18.99" data-rating="4.8" data-reviews="120" data-cal="520" data-time="15" data-desc="Double smashed patty, cheddar, caramelized onions, pickles & special sauce." data-tags="Fresh,Popular">
+<div class="mimg"><img loading="lazy" decoding="async" src="img/dish/smash-burger.jpg" alt="Classic Smash Burger"><span class="mbdg new"><i class="fas fa-star"></i> New</span></div>
+<div class="mbody"><div class="mtit">Classic Smash Burger</div><div class="mstars"><i class="fas fa-star"></i> 4.8 (120)</div><div class="mdesc">Double smashed patty, cheddar, caramelized onions, pickles & special sauce.</div></div>
+<div class="mbuy"><div class="mprice">$14.99<small>$18.99</small></div><button class="madd" title="View Details"><i class="fas fa-plus"></i></button></div></div></div>
+<div class="mwrap" data-c="pizza"><div class="mcard" data-img="img/dish/margherita.jpg" data-title="Margherita Royale" data-cat="Pizza" data-price="$19.99" data-old="$24.99" data-rating="4.6" data-reviews="95" data-cal="520" data-time="15" data-desc="San Marzano tomatoes, buffalo mozzarella, basil & truffle oil on sourdough." data-tags="Fresh,Popular">
+<div class="mimg"><img loading="lazy" decoding="async" src="img/dish/margherita.jpg" alt="Margherita Royale"></div>
+<div class="mbody"><div class="mtit">Margherita Royale</div><div class="mstars"><i class="fas fa-star"></i> 4.6 (95)</div><div class="mdesc">San Marzano tomatoes, buffalo mozzarella, basil & truffle oil on sourdough.</div></div>
+<div class="mbuy"><div class="mprice">$19.99<small>$24.99</small></div><button class="madd" title="View Details"><i class="fas fa-plus"></i></button></div></div></div>
+<div class="mwrap" data-c="chicken"><div class="mcard" data-img="img/dish/cat-chicken.jpg" data-title="Crispy Fried Chicken" data-cat="Chicken" data-price="$12.99" data-old="$16.99" data-rating="4.7" data-reviews="210" data-cal="520" data-time="15" data-desc="Crunchy and juicy fried chicken with signature spices." data-tags="Fresh,Popular">
+<div class="mimg"><img loading="lazy" decoding="async" src="img/dish/cat-chicken.jpg" alt="Crispy Fried Chicken"><span class="mbdg best"><i class="fas fa-star"></i> Bestseller</span></div>
+<div class="mbody"><div class="mtit">Crispy Fried Chicken</div><div class="mstars"><i class="fas fa-star"></i> 4.7 (210)</div><div class="mdesc">Crunchy and juicy fried chicken with signature spices.</div></div>
+<div class="mbuy"><div class="mprice">$12.99<small>$16.99</small></div><button class="madd" title="View Details"><i class="fas fa-plus"></i></button></div></div></div>
+<div class="mwrap" data-c="chicken"><div class="mcard" data-img="img/dish/nashville.jpg" data-title="Nashville Hot Chicken" data-cat="Chicken" data-price="$13.99" data-old="$17.99" data-rating="4.5" data-reviews="88" data-cal="520" data-time="15" data-desc="Crispy fried chicken in fiery Nashville spice blend with honey drizzle." data-tags="Fresh,Popular">
+<div class="mimg"><img loading="lazy" decoding="async" src="img/dish/nashville.jpg" alt="Nashville Hot Chicken"></div>
+<div class="mbody"><div class="mtit">Nashville Hot Chicken</div><div class="mstars"><i class="fas fa-star"></i> 4.5 (88)</div><div class="mdesc">Crispy fried chicken in fiery Nashville spice blend with honey drizzle.</div></div>
+<div class="mbuy"><div class="mprice">$13.99<small>$17.99</small></div><button class="madd" title="View Details"><i class="fas fa-plus"></i></button></div></div></div>
+<div class="mwrap" data-c="wraps"><div class="mcard" data-img="img/dish/cat-wraps.jpg" data-title="Chicken Wrap Supreme" data-cat="Wraps" data-price="$11.99" data-old="$14.99" data-rating="4.4" data-reviews="76" data-cal="520" data-time="15" data-desc="Grilled chicken, crisp lettuce and garlic mayo in a toasted tortilla." data-tags="Fresh,Popular">
+<div class="mimg"><img loading="lazy" decoding="async" src="img/dish/cat-wraps.jpg" alt="Chicken Wrap Supreme"></div>
+<div class="mbody"><div class="mtit">Chicken Wrap Supreme</div><div class="mstars"><i class="fas fa-star"></i> 4.4 (76)</div><div class="mdesc">Grilled chicken, crisp lettuce and garlic mayo in a toasted tortilla.</div></div>
+<div class="mbuy"><div class="mprice">$11.99<small>$14.99</small></div><button class="madd" title="View Details"><i class="fas fa-plus"></i></button></div></div></div>
+<div class="mwrap" data-c="pasta"><div class="mcard" data-img="img/dish/cat-pasta.jpg" data-title="Creamy Alfredo Pasta" data-cat="Pasta" data-price="$15.99" data-old="$19.99" data-rating="4.6" data-reviews="64" data-cal="520" data-time="15" data-desc="Fettuccine in a rich parmesan cream sauce with garlic and herbs." data-tags="Fresh,Popular">
+<div class="mimg"><img loading="lazy" decoding="async" src="img/dish/cat-pasta.jpg" alt="Creamy Alfredo Pasta"></div>
+<div class="mbody"><div class="mtit">Creamy Alfredo Pasta</div><div class="mstars"><i class="fas fa-star"></i> 4.6 (64)</div><div class="mdesc">Fettuccine in a rich parmesan cream sauce with garlic and herbs.</div></div>
+<div class="mbuy"><div class="mprice">$15.99<small>$19.99</small></div><button class="madd" title="View Details"><i class="fas fa-plus"></i></button></div></div></div>
+<div class="mwrap" data-c="desserts"><div class="mcard" data-img="img/dish/donuts.jpg" data-title="Sprinkle Donuts" data-cat="Desserts" data-price="$7.99" data-old="$9.99" data-rating="4.9" data-reviews="142" data-cal="520" data-time="15" data-desc="Glazed donuts loaded with chocolate drizzle and rainbow sprinkles." data-tags="Fresh,Popular">
+<div class="mimg"><img loading="lazy" decoding="async" src="img/dish/donuts.jpg" alt="Sprinkle Donuts"><span class="mbdg new"><i class="fas fa-star"></i> New</span></div>
+<div class="mbody"><div class="mtit">Sprinkle Donuts</div><div class="mstars"><i class="fas fa-star"></i> 4.9 (142)</div><div class="mdesc">Glazed donuts loaded with chocolate drizzle and rainbow sprinkles.</div></div>
+<div class="mbuy"><div class="mprice">$7.99<small>$9.99</small></div><button class="madd" title="View Details"><i class="fas fa-plus"></i></button></div></div></div>
+</div>
+            <!-- end #mgrid -->
+            <div class="text-center mt-5"><a href="#" class="btn-red"><i class="fas fa-th-large"></i>View Full Menu</a></div>
+         </div>
+      </section>
+	  
+	  
+      <!-- ============================================================
+         FIX 4 � MENU DETAIL POPUP MODAL
+         ============================================================ -->
+      <div id="menuPop">
+         <div class="mpbox">
+            <button class="mpclose" id="mpClose"><i class="fas fa-times"></i></button>
+            <div class="mpimg"><img id="mpImg" src="" alt=""/></div>
+            <div class="mpbody">
+               <div id="mpCat"></div>
+               <div id="mpTitle"></div>
+               <div id="mpStars"></div>
+               <div id="mpDesc"></div>
+               <div id="mpPrice"></div>
+               <div class="mpmeta" id="mpMeta"></div>
+               <div class="mpqty">
+                  <button class="mpqbtn" id="mpMinus" type="button" aria-label="Decrease quantity">&minus;</button>
+                  <span class="mpqnum" id="mpQnum">1</span>
+                  <button class="mpqbtn" id="mpPlus" type="button" aria-label="Increase quantity">+</button>
+                  <span class="mpqlbl" id="mpUnit">portion</span>
+               </div>
+               <div class="mptags" id="mpTags"></div>
+               <button class="mpaddcart" id="mpAddCart" type="button"><span><i class="fas fa-shopping-cart"></i> Add to Cart</span><span class="mpatot" id="mpTotal">$0.00</span></button>
+            </div>
+         </div>
+      </div>
+      <!-- SPECIAL OFFER -->
+      <section id="special">
+         <div class="spbg"></div>
+         <div class="container" style="position:relative;z-index:2;">
+            <div class="row align-items-center g-5">
+               <div class="col-lg-6" data-aos="fade-right">
+                  <div class="sptag"><i class="fas fa-bolt me-1"></i>Limited Time Offer</div>
+                  <h2 class="sptitle">Get 30% Off<br/>Our Signature<br/><span>Burger</span> Meal</h2>
+                  <p class="spdesc">Don't miss our weekend special - grab our award-winning signature burger combo with loaded fries and a premium shake at an unbeatable price.</p>
+                  <div class="cdwrap">
+                     <div class="cditem"><span class="cdnum" id="cdH">08</span><span class="cdlbl">Hours</span></div>
+                     <div class="cditem"><span class="cdnum" id="cdM">45</span><span class="cdlbl">Minutes</span></div>
+                     <div class="cditem"><span class="cdnum" id="cdS">30</span><span class="cdlbl">Seconds</span></div>
+                  </div>
+                  <button type="button" class="btn-red" id="dealBtn" data-id="signature-burger-meal" data-title="Signature Burger Meal" data-cat="Combo" data-price="17.49" data-old="24.99" data-img="img/off-img.jpg"><i class="fas fa-shopping-cart"></i>Grab the Deal</button>
+               </div>
+               <div class="col-lg-6" data-aos="fade-left">
+                  <div class="spimgw">
+                     <div class="spglow"></div>
+                     <div class="sppbdg"><span class="old">$24.99</span><span class="np">$17.49</span></div>
+                     <img loading="lazy" decoding="async" src="img/off-img.jpg" alt="Special Burger"/>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+	  
+	  
+      <!-- ============================================================
+         GALLERY � FIX 7 (click opens detail popup)
+         ============================================================ -->
+      <section id="gallery">
+         <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+               <span class="slbl">Food Showcase</span>
+               <h2 class="stitle">Let's See Our <span>Fast Food</span></h2>
+               <div class="sline"></div>
+            </div>
+            <div class="ggrid" data-aos="fade-up">
+               <div class="gitem"
+                  data-gi="0"
+                  data-gimg="img/portfolio/work1.jpg"
+                  data-gtitle="Gourmet Burgers"
+                  data-gdesc="Our award-winning smash burgers, hand-crafted with 100% premium beef, aged cheddar and house-made sauces.">
+                  <img loading="lazy" decoding="async" src="img/portfolio/work1.jpg" alt="Burgers"/>
+                  <div class="gover"><span><i class="fas fa-expand-alt"></i> Gourmet Burgers</span></div>
+               </div>
+               <div class="gitem"
+                  data-gi="1"
+                  data-gimg="img/portfolio/work2.jpg"
+                  data-gtitle="Wood-Fired Pizza"
+                  data-gdesc="Authentic Neapolitan-style pizzas fired at 900deg F in our wood-burning stone oven for the perfect char.">
+                  <img loading="lazy" decoding="async" src="img/portfolio/work2.jpg" alt="Pizza"/>
+                  <div class="gover"><span><i class="fas fa-expand-alt"></i> Wood-Fired Pizza</span></div>
+               </div>
+               <div class="gitem"
+                  data-gi="2"
+                  data-gimg="img/portfolio/work3.jpg"
+                  data-gtitle="Crispy Fried Chicken"
+                  data-gdesc="Double-brined, hand-battered chicken fried to golden perfection using our 15-spice secret blend.">
+                  <img loading="lazy" decoding="async" src="img/portfolio/work3.jpg" alt="Chicken"/>
+                  <div class="gover"><span><i class="fas fa-expand-alt"></i> Crispy Fried Chicken</span></div>
+               </div>
+               <div class="gitem"
+                  data-gi="3"
+                  data-gimg="img/portfolio/work4.jpg"
+                  data-gtitle="Sweet Desserts"
+                  data-gdesc="Handcrafted desserts - from molten lava cakes to artisan ice cream sundaes and seasonal pastries.">
+                  <img loading="lazy" decoding="async" src="img/portfolio/work4.jpg" alt="Desserts"/>
+                  <div class="gover"><span><i class="fas fa-expand-alt"></i> Sweet Desserts</span></div>
+               </div>
+               <div class="gitem"
+                  data-gi="4"
+                  data-gimg="img/portfolio/work5.jpg"
+                  data-gtitle="Fresh Wraps &amp; Rolls"
+                  data-gdesc="Loaded fresh wraps packed with grilled proteins, crunchy vegetables and our house-made sauces.">
+                  <img loading="lazy" decoding="async" src="img/portfolio/work5.jpg" alt="Wraps"/>
+                  <div class="gover"><span><i class="fas fa-expand-alt"></i> Fresh Wraps &amp; Rolls</span></div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- FIX 7 � GALLERY POPUP -->
+      <div id="galPop">
+         <div class="gpbox">
+            <button class="gpclose" id="gpClose"><i class="fas fa-times"></i></button>
+            <img id="gpImg" src="" alt=""/>
+            <div class="gpcap">
+               <h5 id="gpTitle"></h5>
+               <p id="gpDesc"></p>
+            </div>
+            <div class="gpnav">
+               <button id="gpPrev"><i class="fas fa-chevron-left me-1"></i>Prev</button>
+               <button id="gpNext">Next <i class="fas fa-chevron-right ms-1"></i></button>
+            </div>
+         </div>
+      </div>
+	  
+	  
+      <!-- ============================================================
+         HISTORY � FIX 8 (alternating left/right text)
+         ============================================================ -->
+      <section id="history">
+         <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+               <span class="slbl">Our Journey</span>
+               <h2 class="stitle">A History of <span>Restaurant</span></h2>
+               <div class="sline"></div>
+               <p class="sdesc mx-auto" style="max-width:480px;">From humble beginnings to the city's most beloved restaurant - every chapter written with passion.</p>
+            </div>
+            <div class="timeline" data-aos="fade-up">
+               <!-- ODD ? text on LEFT -->
+               <div class="tli">
+                  <div class="tl-left">
+                     <div class="tlyear">2012</div>
+                     <h5>Evolution of Restaurants</h5>
+                     <p>Sarab opens its first 20-seat diner on Flavor Street. Within 3 months, lines stretch around the block every evening as word of our food spreads.</p>
+                  </div>
+                  <div class="tl-center">
+                     <div class="tldot"></div>
+                  </div>
+                  <div class="tl-right">
+                     <div class="tlyear">2012</div>
+                     <h5>Evolution of Restaurants</h5>
+                     <p>Sarab opens its first 20-seat diner on Flavor Street. Within 3 months, lines stretch around the block every evening as word of our food spreads.</p>
+                  </div>
+               </div>
+               <!-- EVEN ? text on RIGHT -->
+               <div class="tli">
+                  <div class="tl-left">
+                     <div class="tlyear">2015</div>
+                     <h5>Fine Dining &amp; The Concept</h5>
+                     <p>Expanding the vision - we introduced our signature tasting menu and hired our first Michelin-trained chef, elevating our craft to remarkable new heights.</p>
+                  </div>
+                  <div class="tl-center">
+                     <div class="tldot"></div>
+                  </div>
+                  <div class="tl-right">
+                     <div class="tlyear">2015</div>
+                     <h5>Fine Dining &amp; The Concept</h5>
+                     <p>Expanding the vision - we introduced our signature tasting menu and hired our first Michelin-trained chef, elevating our craft to remarkable new heights.</p>
+                  </div>
+               </div>
+               <!-- ODD ? text on LEFT -->
+               <div class="tli">
+                  <div class="tl-left">
+                     <div class="tlyear">2019</div>
+                     <h5>Modern Fast Food Origins</h5>
+                     <p>Launched our signature fast-food line, merging gourmet quality with speed and convenience. Within 6 months we won 3 prestigious culinary awards nationally.</p>
+                  </div>
+                  <div class="tl-center">
+                     <div class="tldot"></div>
+                  </div>
+                  <div class="tl-right">
+                     <div class="tlyear">2019</div>
+                     <h5>Modern Fast Food Origins</h5>
+                     <p>Launched our signature fast-food line, merging gourmet quality with speed and convenience. Within 6 months we won 3 prestigious culinary awards nationally.</p>
+                  </div>
+               </div>
+               <!-- EVEN ? text on RIGHT -->
+               <div class="tli">
+                  <div class="tl-left">
+                     <div class="tlyear">2026</div>
+                     <h5>National Expansion</h5>
+                     <p>Now operating in 8 cities across the US with an online delivery platform handling 10,000+ orders weekly - and growing every single day.</p>
+                  </div>
+                  <div class="tl-center">
+                     <div class="tldot"></div>
+                  </div>
+                  <div class="tl-right">
+                     <div class="tlyear">2026</div>
+                     <h5>National Expansion</h5>
+                     <p>Now operating in 8 cities across the US with an online delivery platform handling 10,000+ orders weekly - and growing every single day.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+	  
+	  
+      <!-- CHEFS -->
+      <section id="chefs">
+         <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+               <span class="slbl">The Culinary Team</span>
+               <h2 class="stitle">Meet Our Expert <span>Chefs</span></h2>
+               <div class="sline"></div>
+            </div>
+            <div class="row g-4">
+               <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                  <div class="chcard">
+                     <div class="chimg">
+                        <img loading="lazy" decoding="async" src="img/chefs/1.jpg" alt=""/>
+                        <div class="chsoc"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div>
+                     </div>
+                     <div class="chbody">
+                        <div class="chnm">Alice Mortal</div>
+                        <div class="chrole">Head Chef</div>
+                        <div class="chexp">12 years experience</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+                  <div class="chcard">
+                     <div class="chimg">
+                        <img loading="lazy" decoding="async" src="img/chefs/2.jpg" alt=""/>
+                        <div class="chsoc"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div>
+                     </div>
+                     <div class="chbody">
+                        <div class="chnm">Michael Corn</div>
+                        <div class="chrole">Grill Master</div>
+                        <div class="chexp">8 years experience</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+                  <div class="chcard">
+                     <div class="chimg">
+                        <img loading="lazy" decoding="async" src="img/chefs/3.jpg" alt=""/>
+                        <div class="chsoc"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div>
+                     </div>
+                     <div class="chbody">
+                        <div class="chnm">Faz Chowdel</div>
+                        <div class="chrole">Pastry Chef</div>
+                        <div class="chexp">10 years experience</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+                  <div class="chcard">
+                     <div class="chimg">
+                        <img loading="lazy" decoding="async" src="img/chefs/4.jpg" alt=""/>
+                        <div class="chsoc"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div>
+                     </div>
+                     <div class="chbody">
+                        <div class="chnm">William Latnum</div>
+                        <div class="chrole">Pizza Artisan</div>
+                        <div class="chexp">9 years experience</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+	  
+	  
+      <!-- HOURS -->
+      <section id="hours">
+         <div class="hrsbg"></div>
+         <div class="container" style="position:relative;z-index:2;">
+            <div class="text-center mb-5" data-aos="fade-up">
+               <span class="slbl" style="color:#a5d6bc;">Opening Hours</span>
+               <h2 class="stitle" style="color:#fff;">We're Open <span style="color:var(--secondary);">For You</span></h2>
+               <div class="sline"></div>
+            </div>
+            <div class="row g-3 g-lg-4">
+               <div class="col-12 col-lg-5" data-aos="fade-right">
+                  <div class="hrscard">
+                     <div class="hrsrow">
+                        <span class="hrsday"><i class="fas fa-calendar-day me-2" style="color:var(--secondary);"></i>Monday - Tuesday</span>
+                        <div class="d-flex align-items-center gap-2">
+                           <div class="hdot off"></div>
+                           <span class="hrstime" style="color:#ff6b6b;">Closed</span>
+                        </div>
+                     </div>
+                     <div class="hrsrow">
+                        <span class="hrsday"><i class="fas fa-calendar-day me-2" style="color:var(--secondary);"></i>Wednesday - Thursday</span>
+                        <div class="d-flex align-items-center gap-2">
+                           <div class="hdot on"></div>
+                           <span class="hrstime">09:00 AM - 10:00 PM</span>
+                        </div>
+                     </div>
+                     <div class="hrsrow">
+                        <span class="hrsday"><i class="fas fa-calendar-day me-2" style="color:var(--secondary);"></i>Friday</span>
+                        <div class="d-flex align-items-center gap-2">
+                           <div class="hdot on"></div>
+                           <span class="hrstime">09:00 AM - 11:00 PM</span>
+                        </div>
+                     </div>
+                     <div class="hrsrow">
+                        <span class="hrsday"><i class="fas fa-calendar-day me-2" style="color:var(--secondary);"></i>Saturday</span>
+                        <div class="d-flex align-items-center gap-2">
+                           <div class="hdot on"></div>
+                           <span class="hrstime">10:00 AM - 11:30 PM</span>
+                        </div>
+                     </div>
+                     <div class="hrsrow">
+                        <span class="hrsday"><i class="fas fa-calendar-day me-2" style="color:var(--secondary);"></i>Sunday</span>
+                        <div class="d-flex align-items-center gap-2">
+                           <div class="hdot on"></div>
+                           <span class="hrstime">11:00 AM - 09:00 PM</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-5 col-lg-3" data-aos="zoom-in">
+                  <div class="hrscta">
+                     <i class="fas fa-truck-fast fa-2x mb-3" style="color:rgba(255,255,255,.8);"></i>
+                     <h4>Order Online</h4>
+                     <p>Get hot food delivered in 25 minutes</p>
+                     <a href="#menu" class="btnw">Order Now <i class="fas fa-arrow-right ms-1"></i></a>
+                  </div>
+               </div>
+               <div class="col-md-7 col-lg-4" data-aos="fade-left">
+                  <div class="hrscard">
+                     <h5 style="color:#fff;margin-bottom:18px;font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:700;"><i class="fas fa-map-marker-alt me-2" style="color:var(--secondary);"></i>Find Us</h5>
+                     <div class="hrsrow"><span class="hrsday"><i class="fas fa-location-dot me-2" style="color:var(--secondary);"></i>Address</span><span class="hrstime" style="font-size:.8rem;">42 Flavor Street, NY</span></div>
+                     <div class="hrsrow"><span class="hrsday"><i class="fas fa-phone me-2" style="color:var(--secondary);"></i>Phone</span><span class="hrstime" style="font-size:.8rem;">+1 (800) 123-4567</span></div>
+                     <div class="hrsrow"><span class="hrsday"><i class="fas fa-envelope me-2" style="color:var(--secondary);"></i>Email</span><span class="hrstime" style="font-size:.8rem;">hello@sarabfood.com</span></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+	  
+	  
+      <!-- TESTIMONIALS -->
+      <section id="testimonials">
+         <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+               <span class="slbl">What People Say</span>
+               <h2 class="stitle">Our Customers <span>Feedback</span></h2>
+               <div class="sline"></div>
+            </div>
+            <div class="swiper tesSwiper" data-aos="fade-up">
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                     <div class="tescard">
+                        <div class="tesq">"</div>
+                        <div class="tess"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testxt">Honestly the best burgers I've ever had. The smash burger is incredible - perfectly crispy edges, juicy inside, and those pickles! We come every Friday now.</p>
+                        <div class="tesauth">
+                           <img loading="lazy" decoding="async" src="img/testimonial/1.jpg" alt=""/>
+                           <div>
+                              <div class="tesnm">Monica Wilber</div>
+                              <div class="tesrl">Regular Customer</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tescard">
+                        <div class="tesq">"</div>
+                        <div class="tess"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testxt">Ordered delivery and the food arrived hot and fresh in 22 minutes. Portions are generous. Sarab has become my go-to comfort food spot without question.</p>
+                        <div class="tesauth">
+                           <img loading="lazy" decoding="async" src="img/testimonial/2.jpg" alt=""/>
+                           <div>
+                              <div class="tesnm">Cameron Fox</div>
+                              <div class="tesrl">Food Blogger</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tescard">
+                        <div class="tesq">"</div>
+                        <div class="tess"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testxt">The truffle pasta blew my mind. I didn't expect that quality from a fast food place. Great ambiance, super friendly staff. Highly recommended!</p>
+                        <div class="tesauth">
+                           <img loading="lazy" decoding="async" src="img/testimonial/3.jpg" alt=""/>
+                           <div>
+                              <div class="tesnm">Priya Sharma</div>
+                              <div class="tesrl">Food Enthusiast</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tescard">
+                        <div class="tesq">"</div>
+                        <div class="tess"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testxt">Catered our office party of 50 people and everything was flawless. Fresh, delicious, on time and well presented. Nashville chicken was the absolute star!</p>
+                        <div class="tesauth">
+                           <img loading="lazy" decoding="async" src="img/testimonial/4.jpg" alt=""/>
+                           <div>
+                              <div class="tesnm">David Park</div>
+                              <div class="tesrl">Corporate Client</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-pagination mt-4" style="position:static;"></div>
+            </div>
+         </div>
+      </section>
+	  
+      <!-- RESERVATION FORM -->
+      <section id="reservation">
+         <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+               <span class="slbl">Book a Table</span>
+               <h2 class="stitle">Make a <span>Reservation</span></h2>
+               <div class="sline"></div>
+               <p class="sdesc mx-auto" style="max-width:480px;">Reserve your table for a memorable dining experience. We recommend booking 24 hours in advance for weekend evenings.</p>
+            </div>
+            <div class="row g-4 align-items-start">
+               <div class="col-lg-4" data-aos="fade-right">
+                  <div class="rescard" style="background:var(--dark);border-radius:18px;padding:36px;">
+                     <h4 style="color:#fff;font-size:1.3rem;margin-bottom:8px;">Contact Info</h4>
+                     <p style="color:rgba(255,255,255,.55);font-size:.85rem;margin-bottom:26px;">We're happy to help you plan the perfect dining experience.</p>
+                     <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-center gap-3">
+                           <div style="width:46px;height:46px;border-radius:11px;background:rgba(232,40,26,.2);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:1.1rem;flex-shrink:0;"><i class="fas fa-clock"></i></div>
+                           <div><strong style="display:block;color:#ccc;font-size:.78rem;text-transform:uppercase;letter-spacing:.8px;">Opening Hours</strong><span style="color:#fff;font-size:.87rem;">Wed - Sun, 9 AM - 11 PM</span></div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                           <div style="width:46px;height:46px;border-radius:11px;background:rgba(232,40,26,.2);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:1.1rem;flex-shrink:0;"><i class="fas fa-phone-alt"></i></div>
+                           <div><strong style="display:block;color:#ccc;font-size:.78rem;text-transform:uppercase;letter-spacing:.8px;">Call for Booking</strong><span style="color:#fff;font-size:.87rem;">+1 (800) 123-4567</span></div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                           <div style="width:46px;height:46px;border-radius:11px;background:rgba(232,40,26,.2);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:1.1rem;flex-shrink:0;"><i class="fas fa-users"></i></div>
+                           <div><strong style="display:block;color:#ccc;font-size:.78rem;text-transform:uppercase;letter-spacing:.8px;">Group Dining</strong><span style="color:#fff;font-size:.87rem;">Special menus for 10+ guests</span></div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                           <div style="width:46px;height:46px;border-radius:11px;background:rgba(232,40,26,.2);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:1.1rem;flex-shrink:0;"><i class="fas fa-map-marker-alt"></i></div>
+                           <div><strong style="display:block;color:#ccc;font-size:.78rem;text-transform:uppercase;letter-spacing:.8px;">Location</strong><span style="color:#fff;font-size:.87rem;">42 Flavor Street, NY</span></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-8" data-aos="fade-left">
+                  <div class="fcard">
+                     <div class="row g-3">
+                        <div class="col-sm-6"><label class="flbl">Full Name *</label><input type="text" class="fctrl" name="name" autocomplete="name" required placeholder="John Doe"/></div>
+                        <div class="col-sm-6"><label class="flbl">Phone Number *</label><input type="tel" class="fctrl" name="phone" autocomplete="tel" required placeholder="+1 (800) 000-0000"/></div>
+                        <div class="col-sm-6"><label class="flbl">Email Address *</label><input type="email" class="fctrl" name="email" autocomplete="email" required placeholder="you@email.com"/></div>
+                        <div class="col-sm-6">
+                           <label class="flbl">Number of Guests *</label>
+                           <select class="fctrl">
+                              <option>1 Person</option>
+                              <option>2 People</option>
+                              <option>3 - 4 People</option>
+                              <option>5 - 6 People</option>
+                              <option>7 -10 People</option>
+                              <option>10+ People</option>
+                           </select>
+                        </div>
+                        <div class="col-6"><label class="flbl">Date *</label><input type="date" class="fctrl" name="date" id="resDate" required/></div>
+                        <div class="col-6">
+                           <label class="flbl">Time *</label>
+                           <select class="fctrl">
+                              <option>09:00 AM</option>
+                              <option>10:00 AM</option>
+                              <option>11:00 AM</option>
+                              <option>12:00 PM</option>
+                              <option>01:00 PM</option>
+                              <option>02:00 PM</option>
+                              <option>06:00 PM</option>
+                              <option>07:00 PM</option>
+                              <option>08:00 PM</option>
+                              <option>09:00 PM</option>
+                              <option>10:00 PM</option>
+                           </select>
+                        </div>
+                        <div class="col-12"><label class="flbl">Special Requests</label><textarea class="fctrl" rows="3" placeholder="Allergies, dietary needs, special occasions..."></textarea></div>
+                        <div class="col-12"><button type="button" class="btn-red w-100 justify-content-center" id="resBtn"><i class="fas fa-calendar-check"></i>Confirm Reservation</button></div>
+                     </div>
+                     <div class="sucmsg" id="resOk">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Table reserved! We'll confirm via email shortly.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+	  
+      <!-- BLOG -->
+      <section id="blog">
+         <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+               <span class="slbl">News &amp; Updates</span>
+               <h2 class="stitle">Our Latest <span>Blog</span> Posts</h2>
+               <div class="sline"></div>
+            </div>
+            <div class="swiper blogSwiper"><div class="swiper-wrapper">
+               <div class="swiper-slide">
+                  <div class="blcard">
+                     <div class="blimg">
+                        <img loading="lazy" decoding="async" src="img/blog/1.jpg" alt=""/>
+                        <div class="bldatebdg"><span class="bd">14</span><span class="bm">Mar</span></div>
+                     </div>
+                     <div class="blbody">
+                        <div class="bltag">Food &amp; Health</div>
+                        <div class="bltit"><a href="#">Healthy Fast Food: A Myth or Beautiful Reality</a></div>
+                        <div class="blmeta"><span><i class="fas fa-user"></i>James Writer</span><span><i class="fas fa-comment"></i>24 Comments</span></div>
+                        <a href="#" class="blmore">Read More <i class="fas fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-slide">
+                  <div class="blcard">
+                     <div class="blimg">
+                        <img loading="lazy" decoding="async" src="img/blog/2.jpg" alt=""/>
+                        <div class="bldatebdg"><span class="bd">28</span><span class="bm">Feb</span></div>
+                     </div>
+                     <div class="blbody">
+                        <div class="bltag">Food Science</div>
+                        <div class="bltit"><a href="#">Is Fast Food Getting Healthier? Here's What We Found</a></div>
+                        <div class="blmeta"><span><i class="fas fa-user"></i>Sarah Grain</span><span><i class="fas fa-comment"></i>18 Comments</span></div>
+                        <a href="#" class="blmore">Read More <i class="fas fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-slide">
+                  <div class="blcard">
+                     <div class="blimg">
+                        <img loading="lazy" decoding="async" src="img/blog/3.jpg" alt=""/>
+                        <div class="bldatebdg"><span class="bd">05</span><span class="bm">Jan</span></div>
+                     </div>
+                     <div class="blbody">
+                        <div class="bltag">Recipes</div>
+                        <div class="bltit"><a href="#">Innovative Hot Chickpeas Flake Crackin' Recipe at Home</a></div>
+                        <div class="blmeta"><span><i class="fas fa-user"></i>Chef Marcus</span><span><i class="fas fa-comment"></i>32 Comments</span></div>
+                        <a href="#" class="blmore">Read More <i class="fas fa-arrow-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div><div class="swiper-pagination blog-pg"></div></div>
+         </div>
+      </section>
+	  
+      <!-- NEWSLETTER -->
+      <section id="newsletter">
+         <div class="nlbg"></div>
+         <div class="container">
+            <div class="nlw text-center" data-aos="zoom-in">
+               <span class="slbl" style="color:rgba(255,255,255,.7);">Stay Connected</span>
+               <h2 class="mb-3" style="color:#fff;">Subscribe &amp; Get Exclusive <span style="color:var(--secondary);">Deals</span></h2>
+               <p class="mb-4" style="color:rgba(255,255,255,.78);">Get 15% off your first order plus early access to new menu items</p>
+               <div class="nl-form-wrap">
+                  <input class="nlinput" type="email" id="nlEmail" placeholder="Enter your email address..."/>
+                  <button type="button" class="nlbtn" id="nlBtn"><i class="fas fa-paper-plane me-1"></i>Subscribe</button>
+               </div>
+               <p style="color:rgba(255,255,255,.45);font-size:.76rem;margin-top:11px;"><i class="fas fa-lock me-1"></i>No spam, unsubscribe anytime.</p>
+            </div>
+         </div>
+      </section>
+	  
+      <!-- ============================================================
+         FIX 6 � CONTACT FORM
+         ============================================================ -->
+      <section id="contact-section">
+         <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+               <span class="slbl">Get In Touch</span>
+               <h2 class="stitle">Contact <span>Us</span></h2>
+               <div class="sline"></div>
+               <p class="sdesc mx-auto" style="max-width:480px;">Have a question, feedback, or want to plan a special event? We'd love to hear from you.</p>
+            </div>
+            <div class="row g-4">
+               <div class="col-lg-4" data-aos="fade-right">
+                  <div class="ctdark">
+                     <h4>Let's Talk</h4>
+                     <p class="ctsub">We typically respond within 2 hours during business hours.</p>
+                     <div class="ctitem">
+                        <div class="cticon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="ctinfo"><strong>Address</strong><span>42 Flavor Street, Manhattan,<br/>New York, NY 10001</span></div>
+                     </div>
+                     <div class="ctitem">
+                        <div class="cticon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="ctinfo"><strong>Phone</strong><span>+1 (800) 123-4567</span></div>
+                     </div>
+                     <div class="ctitem">
+                        <div class="cticon"><i class="fas fa-envelope"></i></div>
+                        <div class="ctinfo"><strong>Email</strong><span>hello@sarabfood.com</span></div>
+                     </div>
+                     <div class="ctitem">
+                        <div class="cticon"><i class="fas fa-clock"></i></div>
+                        <div class="ctinfo"><strong>Working Hours</strong><span>Wed - Sun: 9 AM - 11 PM</span></div>
+                     </div>
+                     <div class="ctsocrow">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-8" data-aos="fade-left">
+                  <div class="fcard">
+                     <div class="row g-3">
+                        <div class="col-sm-6"><label class="flbl">Your Name *</label><input type="text" class="fctrl" name="name" autocomplete="name" required placeholder="John Doe"/></div>
+                        <div class="col-sm-6"><label class="flbl">Email Address *</label><input type="email" class="fctrl" name="email" autocomplete="email" required placeholder="you@email.com"/></div>
+                        <div class="col-sm-6"><label class="flbl">Phone Number</label><input type="tel" class="fctrl" name="phone" autocomplete="tel" placeholder="+1 (800) 000-0000"/></div>
+                        <div class="col-sm-6">
+                           <label class="flbl">Subject *</label>
+                           <select class="fctrl">
+                              <option>General Inquiry</option>
+                              <option>Catering &amp; Events</option>
+                              <option>Feedback</option>
+                              <option>Partnership</option>
+                              <option>Media &amp; Press</option>
+                           </select>
+                        </div>
+                        <div class="col-12"><label class="flbl">Message *</label><textarea class="fctrl" name="message" required minlength="10" rows="5" placeholder="Write your message here..."></textarea></div>
+                        <div class="col-12"><button type="button" class="btn-red" id="ctcBtn"><i class="fas fa-paper-plane"></i>Send Message</button></div>
+                     </div>
+                     <div class="sucmsg" id="ctcOk">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Message sent! We'll reply within 2 hours.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+	  
+      <!-- FOOTER -->
+      <footer>
+         <div class="container">
+            <div class="row g-4 g-lg-5">
+               <div class="col-lg-4">
+                  <div class="fnm">Sar<span>ab</span></div>
+                  <p class="fdesc">We bring the world's finest flavors together in a fast, friendly, and affordable experience. Every meal crafted with love.</p>
+                  <div class="fsoc">
+                     <a href="#"><i class="fab fa-facebook-f"></i></a>
+                     <a href="#"><i class="fab fa-instagram"></i></a>
+                     <a href="#"><i class="fab fa-twitter"></i></a>
+                     <a href="#"><i class="fab fa-youtube"></i></a>
+                     <a href="#"><i class="fab fa-tiktok"></i></a>
+                  </div>
+               </div>
+               <div class="col-6 col-lg-2">
+                  <div class="ftit">Quick Links</div>
+                  <ul class="flinks ps-0">
+                     <li><a href="#hero"><i class="fas fa-chevron-right"></i>Home</a></li>
+                     <li><a href="#about"><i class="fas fa-chevron-right"></i>About Us</a></li>
+                     <li><a href="#menu"><i class="fas fa-chevron-right"></i>Our Menu</a></li>
+                     <li><a href="#reservation"><i class="fas fa-chevron-right"></i>Reservation</a></li>
+                     <li><a href="#blog"><i class="fas fa-chevron-right"></i>Blog</a></li>
+                     <li><a href="#contact-section"><i class="fas fa-chevron-right"></i>Contact</a></li>
+                  </ul>
+               </div>
+               <div class="col-6 col-lg-2">
+                  <div class="ftit">Our Menu</div>
+                  <ul class="flinks ps-0">
+                     <li><a href="#menu"><i class="fas fa-chevron-right"></i>Burgers</a></li>
+                     <li><a href="#menu"><i class="fas fa-chevron-right"></i>Pizza</a></li>
+                     <li><a href="#menu"><i class="fas fa-chevron-right"></i>Fried Chicken</a></li>
+                     <li><a href="#menu"><i class="fas fa-chevron-right"></i>Wraps &amp; Rolls</a></li>
+                     <li><a href="#menu"><i class="fas fa-chevron-right"></i>Pasta</a></li>
+                     <li><a href="#menu"><i class="fas fa-chevron-right"></i>Desserts</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-4">
+                  <div class="ftit">Get In Touch</div>
+                  <div class="fci">
+                     <div class="fciico"><i class="fas fa-map-marker-alt"></i></div>
+                     <div class="fciinfo"><strong>Address</strong>42 Flavor Street, Manhattan, NY 10001</div>
+                  </div>
+                  <div class="fci">
+                     <div class="fciico"><i class="fas fa-phone-alt"></i></div>
+                     <div class="fciinfo"><strong>Phone</strong>+1 (800) 123-4567</div>
+                  </div>
+                  <div class="fci">
+                     <div class="fciico"><i class="fas fa-envelope"></i></div>
+                     <div class="fciinfo"><strong>Email</strong>hello@sarabfood.com</div>
+                  </div>
+                  <div class="fci">
+                     <div class="fciico"><i class="fas fa-clock"></i></div>
+                     <div class="fciinfo"><strong>Hours</strong>Wed - Sun: 09 AM - 11 PM</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="fbot">
+            <div class="container">
+               <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                  <p>&copy 2026 <span>Sarab Restaurant</span>. All Rights Reserved by <a target="_blank" class="mx-0 fw-bold text-success" href="https://bestwpware.com/">Bestwpware</a>. Made with <span><i class="fas fa-heart"></i></span>  <br>Distributed by <a target="_blank" class="mx-0 fw-bold text-success" href="https://themewagon.com">ThemeWagon</a></p>
+                  <div><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+      <!-- ============================================================
+         CART DRAWER (side panel on desktop, bottom sheet on mobile)
+         ============================================================ -->
+      <div class="cartov" id="cartOv" hidden></div>
+      <aside class="cartdr" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cdTitle" aria-hidden="true" tabindex="-1">
+         <div class="cd-head">
+            <button type="button" class="cd-back" id="cdBack" aria-label="Back to cart" hidden><i class="fas fa-arrow-left"></i></button>
+            <div class="cd-htxt">
+               <h5 id="cdTitle">Your Cart</h5>
+               <small id="cdSub">0 items</small>
+            </div>
+            <button type="button" class="cd-x" id="cartClose" aria-label="Close cart"><i class="fas fa-times"></i></button>
+         </div>
+         <div class="cd-body" id="cdBody">
+            <!-- STEP 1: cart -->
+            <div class="cd-view" id="cdViewCart">
+               <div class="cd-empty" id="cdEmpty">
+                  <div class="cd-eico"><i class="fas fa-shopping-bag"></i></div>
+                  <h6>Your cart is empty</h6>
+                  <p>Good food is always cooking. Add something from the menu.</p>
+                  <a href="#menu" class="btn-red" data-close-cart><i class="fas fa-utensils"></i>Browse Menu</a>
+               </div>
+               <div id="cdFilled" hidden>
+                  <div class="cd-rest">
+                     <div class="cd-rico"><i class="fas fa-utensils"></i></div>
+                     <div><b>Sarab Restaurant</b><small>42 Flavor Street, NY</small></div>
+                     <span class="cd-eta"><i class="fas fa-clock"></i> 25 min</span>
+                  </div>
+                  <ul class="cd-items" id="cdItems"></ul>
+                  <button type="button" class="cd-clear" id="cdClear"><i class="far fa-trash-alt"></i> Clear cart</button>
+                  <div class="cd-card cd-coupon">
+                     <div class="cd-ctitle"><i class="fas fa-tag"></i> Offers &amp; coupons</div>
+                     <div class="cd-cform">
+                        <input type="text" id="cpInput" placeholder="Enter coupon code" autocomplete="off" aria-label="Coupon code"/>
+                        <button type="button" id="cpApply">Apply</button>
+                     </div>
+                     <div class="cd-cmsg" id="cpMsg">Try <b>SARAB15</b> for 15% off your order</div>
+                  </div>
+                  <div class="cd-card cd-bill">
+                     <div class="cd-ctitle">Bill details</div>
+                     <div class="cd-row"><span>Item total</span><span id="bItems">$0.00</span></div>
+                     <div class="cd-row cd-green" id="bCpRow" hidden><span>Coupon (<span id="bCpCode"></span>)</span><span id="bCp">-$0.00</span></div>
+                     <div class="cd-row"><span>Delivery fee</span><span><s class="cd-mute">$2.99</s> <b class="cd-green">FREE</b></span></div>
+                     <div class="cd-row"><span>Packaging charges</span><span id="bPack">$0.00</span></div>
+                     <div class="cd-row"><span>Taxes (8.875%)</span><span id="bTax">$0.00</span></div>
+                     <div class="cd-row cd-total"><span>To pay</span><span id="bTotal">$0.00</span></div>
+                  </div>
+                  <div class="cd-save" id="bSave" hidden><i class="fas fa-piggy-bank"></i> You're saving <b id="bSaveAmt">$0.00</b> on this order</div>
+               </div>
+            </div>
+            <!-- STEP 2: checkout -->
+            <form class="cd-view" id="cdViewCheckout" novalidate hidden>
+               <div class="cd-card">
+                  <div class="cd-ctitle"><i class="fas fa-map-marker-alt"></i> Delivery details</div>
+                  <div class="row g-2">
+                     <div class="col-12"><label class="flbl" for="coName">Full name *</label><input class="fctrl" id="coName" name="name" autocomplete="name" required placeholder="John Doe"/></div>
+                     <div class="col-12"><label class="flbl" for="coPhone">Phone *</label><input class="fctrl" id="coPhone" name="phone" type="tel" autocomplete="tel" required placeholder="+1 (800) 000-0000"/></div>
+                     <div class="col-12"><label class="flbl" for="coAddr">Delivery address *</label><textarea class="fctrl" id="coAddr" name="address" rows="2" autocomplete="street-address" required placeholder="House / flat no., street, area"></textarea></div>
+                     <div class="col-12"><label class="flbl" for="coNote">Instructions for the kitchen</label><input class="fctrl" id="coNote" name="note" placeholder="e.g. no onions, extra spicy"/></div>
+                  </div>
+               </div>
+               <div class="cd-card">
+                  <div class="cd-ctitle"><i class="fas fa-wallet"></i> Payment method</div>
+                  <label class="cd-pay"><input type="radio" name="pay" value="Cash on delivery" checked/><i class="fas fa-money-bill-wave"></i><span>Cash on delivery</span></label>
+                  <label class="cd-pay"><input type="radio" name="pay" value="Card on delivery"/><i class="far fa-credit-card"></i><span>Card on delivery</span></label>
+                  <label class="cd-pay"><input type="radio" name="pay" value="Pay at pickup"/><i class="fas fa-store"></i><span>Pick up &amp; pay at restaurant</span></label>
+               </div>
+               <div class="cd-card cd-bill cd-mini">
+                  <div class="cd-row"><span id="coItems">0 items</span><span id="coSubtotal">$0.00</span></div>
+                  <div class="cd-row cd-total"><span>To pay</span><span id="coTotal">$0.00</span></div>
+               </div>
+            </form>
+            <!-- STEP 3: success -->
+            <div class="cd-view cd-done" id="cdViewDone" hidden>
+               <div class="cd-dico"><i class="fas fa-check"></i></div>
+               <h5>Order placed!</h5>
+               <p>Order <b id="doId">#SRB0000</b> is being prepared. Estimated delivery in <b>25&ndash;30 min</b>.</p>
+               <div class="cd-card cd-bill cd-mini text-start">
+                  <div class="cd-row"><span>Paid via</span><span id="doPay">Cash on delivery</span></div>
+                  <div class="cd-row cd-total"><span>Total</span><span id="doTotal">$0.00</span></div>
+               </div>
+               <a href="#menu" class="btn-red" data-close-cart><i class="fas fa-utensils"></i>Order something else</a>
+            </div>
+         </div>
+         <div class="cd-foot" id="cdFoot" hidden>
+            <div class="cd-ftot"><b id="fTotal">$0.00</b><small>Total incl. taxes</small></div>
+            <button type="button" class="cd-cta" id="cdCta">Checkout <i class="fas fa-arrow-right"></i></button>
+         </div>
+      </aside>
+      <!-- View-cart bar (mobile/tablet, Swiggy/Zomato style) -->
+      <button type="button" class="vcbar" id="vcBar" data-open-cart hidden>
+         <span class="vc-l"><b id="vcCount">1 item</b><span class="vc-sep">|</span><span id="vcTotal">$0.00</span></span>
+         <span class="vc-r">View Cart <i class="fas fa-shopping-bag"></i></span>
+      </button>
+      <!-- Toast -->
+      <div class="sr-toast" id="toast" role="status" aria-live="polite"></div>
+      <!-- Floating cart -->
+      <!-- <div class="cartfl"><i class="fas fa-shopping-cart"></i><span>My Cart</span><div class="ccount" id="cartCount">0</div></div> -->
+      <!-- Back to top -->
+      <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+    
+	<!-- jQuery -->
+      <script src="js/jquery-3.7.1.min.js"></script>
+      <!-- Bootstrap 5 -->
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <!-- AOS -->
+      <script src="js/aos.js"></script>
+      <!-- Swiper -->
+      <script src="js/swiper-bundle.min.js"></script>
+      <!-- CounterUp -->
+      <script src="js/jquery.magnific-popup.min.js"></script>
+      <!-- Main js -->
+      <script src="js/cart.js"></script>
+      <script src="js/main.js"></script>
+   <nav class="bnav" aria-label="Quick navigation">
+ <a href="#hero" class="on"><i class="fas fa-home"></i>Home</a>
+ <a href="#category"><i class="fas fa-search"></i>Explore</a>
+ <a href="#menu"><i class="far fa-list-alt"></i>Orders</a>
+ <a href="#" role="button" data-open-cart aria-label="Open cart"><span><i class="fas fa-shopping-cart"></i><b data-cart-count hidden>0</b></span>Cart</a>
+ <a href="#contact-section"><i class="far fa-user"></i>Account</a>
+</nav>
+<script src="js/mobile.js"></script>
+</body>
+</html>
